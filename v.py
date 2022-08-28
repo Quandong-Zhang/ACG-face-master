@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
   @Author: zzn 
+  @Modified by Quandong-Zhang
   @Date: 2019-11-12 11:04:36 
-  @Last Modified by:   zzn 
-  @Last Modified time: 2019-11-12 11:04:36 
+  @Last Modified by: Quandong-Zhang
+  @Last Modified time: 2022-8-28 17:11:32 
 """
 import os
 import sys
@@ -50,7 +51,6 @@ if __name__ == '__main__':
     try:
         video_path = sys.argv[1]
         img_path=sys.argv[2]
-        #video_path = "./i2.mp4"
         video_name = os.path.basename(video_path)
     except:
         print('Please enter a video path and a file path')
