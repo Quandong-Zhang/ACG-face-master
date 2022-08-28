@@ -20,15 +20,16 @@ from predictor import Predictor
 if __name__ == '__main__':
     try:
         video_path = sys.argv[1]
+        img_path=sys.argv[2]
         #video_path = "./i2.mp4"
         video_name = os.path.basename(video_path)
     except:
-        print('Please enter a file path')
+        print('Please enter a video path and a file path')
 
     cap = cv2.VideoCapture(video_path)
     if (cap.isOpened() == False):
         print('Unable to read')
-    fps = 20
+    fps = int(cap.get(5))
     frame_width = int(cap.get(3))
     frame_height = int(cap.get(4))
     out = cv2.VideoWriter('demo/detect_video_{}.avi'.format(video_name), cv2.VideoWriter_fourcc(
@@ -44,7 +45,7 @@ if __name__ == '__main__':
             img = Image.fromarray(frame)
             x = predictor.process_img(img)
             predictions = predictor.predict(x)
-            img = predictor.display_boxes(img, predictions,sys.argv[2])
+            img = predictor.display_boxes(img, predictions,img_path)
             save_frame = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
             out.write(save_frame)
         else:
