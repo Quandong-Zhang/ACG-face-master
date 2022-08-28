@@ -45,14 +45,14 @@ class Predictor(object):
                            for k, v in predictions[0].items()}
         return predictions
 
-    def display_boxes(self, img, predictions, img_path, score_thresh=0.8):
+    def display_boxes(self, img, predictions, img_path, score_thresh=0.75):
         add_img = Image.open(img_path)
         add_img = add_img.convert("RGBA")
         #predictions is a dict,try to show it with elements.
         #print(predictions)
-        print(predictions['boxes'],"-----", predictions['scores'])
-        with open("pos.json",'a+',encoding="utf-8") as f:
-            f.write(json.dumps({"a":str(predictions['boxes']),"b":str(predictions['scores'])})+"\n")
+        #print(predictions['boxes'],"-----", predictions['scores'])
+        #with open("pos.json",'a+',encoding="utf-8") as f:
+        #    f.write(json.dumps({"a":str(predictions['boxes']),"b":str(predictions['scores'])})+"\n")
         #end
         boxes, scores = predictions['boxes'], predictions['scores']
         draw = ImageDraw.Draw(img)
