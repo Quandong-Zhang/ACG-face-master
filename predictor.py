@@ -63,7 +63,6 @@ class Predictor(object):
         i=-1
         while i<len(boxes)-1:
             i+=1
-            print(i)
             cur_bbox=boxes[i]
             if scores[i] < score_thresh:
                 continue
