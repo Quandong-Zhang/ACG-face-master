@@ -17,15 +17,7 @@ from predictor import Predictor
 
 
 
-if __name__ == '__main__':
-    try:
-        video_path = sys.argv[1]
-        img_path=sys.argv[2]
-        #video_path = "./i2.mp4"
-        video_name = os.path.basename(video_path)
-    except:
-        print('Please enter a video path and a file path')
-
+def main(video_path,img_path,video_name):
     cap = cv2.VideoCapture(video_path)
     if (cap.isOpened() == False):
         print('Unable to read')
@@ -53,3 +45,14 @@ if __name__ == '__main__':
     cap.release()
     out.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    try:
+        video_path = sys.argv[1]
+        img_path=sys.argv[2]
+        #video_path = "./i2.mp4"
+        video_name = os.path.basename(video_path)
+    except:
+        print('Please enter a video path and a file path')
+    
+    main(video_path,img_path,video_name)
