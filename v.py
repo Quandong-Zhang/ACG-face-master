@@ -50,7 +50,7 @@ def main(video_path,img_path,video_name):
 if __name__ == '__main__':
     try:
         video_path = sys.argv[1]
-        img_path=sys.argv[2]
+        img_path = sys.argv[2]
         video_name = os.path.basename(video_path)
     except:
         print('Please enter a video path and a file path')
