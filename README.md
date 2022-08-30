@@ -9,7 +9,7 @@
 
 
 ### 2.开始使用
-1. 下载 [模型文件](https://pan.baidu.com/s/1Mw9aulKGuFJesIsbcFfxhQ) 并放入 ``` checkpoints/weights ``` 。 
+1. 下载 [模型文件](https://drive.google.com/file/d/1D_SeHDqklcblUOrrQrsHmP6dFzcL3XGF/view?usp=sharing) 并放入 ``` checkpoints/weights ``` 。 
 2. 运行 ``` python v.py 视频文件路径 图片文件路径 ```
 3. 示例:
 https://www.bilibili.com/video/BV1AL411A7W1/
